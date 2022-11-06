@@ -1,0 +1,10 @@
+body {
+    background: black;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url("assets/background/Sky.png");
+}
