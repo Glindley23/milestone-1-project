@@ -1,8 +1,8 @@
 //Making a platformer!
 const canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
-ctx.canvas.width = 64 * 16;
-ctx.canvas.height = 64 * 9;
+ctx.canvas.width = 1024;
+ctx.canvas.height = 576;
 
 
 
@@ -51,18 +51,93 @@ const keys = {
         pressed: false
     },
 }
-// create platform
-const platforms = [new Platform({x: 200, y: 500}), new Platform({x: 500, y: 400})]
+//main platform sprite
+let image = new Image();
+image.src = '../assets/platforms/ground0.png';
+
+// create platforms
+const platforms = [
+    new Platform({
+    x: 0, 
+    y: 550, 
+    image
+}), new Platform({
+    x: 120,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 240,
+    y: 550,
+    image
+}),
+,
+new Platform({
+    x: 360,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 480,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 560,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 850,
+    y: 400,
+    image
+}),
+new Platform({
+    x: 850,
+    y: 470,
+    image
+}),
+new Platform({
+    x: 970,
+    y: 470,
+    image
+}),
+new Platform({
+    x: 930,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 1100,
+    y: 550,
+    image
+}),
+new Platform({
+    x: 1180,
+    y: 350,
+    image
+}),
+new Platform({
+    x: 1480,
+    y: 350,
+    image
+}),
+new Platform({
+    x: 1780,
+    y: 350,
+    image
+}),
+]
 
 let scrollOffset = 0;
 
 // animate loop to update the frame
 function animate () {
-    
+
     window.requestAnimationFrame(animate)
     //clearing canvas each frame
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    
+
     //drawing background layers
     backgroundLevel1.draw();
     backgroundLevel2.draw();
@@ -70,16 +145,16 @@ function animate () {
     player.velocity.x = 0;
     
     //player movement updates
-    if (keys.d.pressed && player.position.x < 400) {
-        player.velocity.x = 5;
-    } else if (keys.a.pressed && player.position.x > 100) {
-        player.velocity.x = -5;
+    if (keys.d.pressed && player.position.x <= 400 ) {
+        player.velocity.x = 3;
+    } else if (keys.a.pressed && player.position.x >= 100) {
+        player.velocity.x = -3;
     } else player.velocity.x = 0;
-    
+
     if (keys.d.pressed) {
         scrollOffset += 5
         platforms.forEach(platform => {
-             platform.position.x -= 5;
+             platform.position.x -= 6;
         }) 
     } else if (keys.a.pressed) {
         scrollOffset -= 5
@@ -101,9 +176,14 @@ function animate () {
             player.position.y + player.height + player.velocity.y >= platform.position.y && 
             player.position.x + player.width >= platform.position.x && 
             platform.position.x + platform.width >= player.position.x
+            
+
         )
-        { player.velocity.y = 0;}
-       
+        { 
+        player.velocity.y = 0;
+
+        }
+
     })
 }
 
@@ -112,8 +192,4 @@ animate();
 
 
 
-    
-/*player.position.x + player.width >= platform.position.x && 
-player.position.x <= platform.position.x + platform.width && 
-player.position.y + platform.height >= platform.position.y &&
-player.position.y <= platform.position.y + platform.height*/
+

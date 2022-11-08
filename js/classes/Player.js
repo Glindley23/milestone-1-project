@@ -1,5 +1,8 @@
 class Player {
     constructor() {
+        
+        this.image = new Image()
+        this.image.src = '../assets/player/M484SpaceSoldier.png'
         this.position = {
             x: 110,
             y: 100
@@ -10,8 +13,8 @@ class Player {
             y: 0,
         }
 
-        this.width = 20
-        this.height = 20
+        this.width =  128
+        this.height = 128
         this.sides = {
             bottom: this.position.y + this.height,
             top: this.position.x,
@@ -24,6 +27,7 @@ class Player {
     draw() {
         ctx.fillStyle = 'white';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        //ctx.drawImage(this.image, this.position.x, this.position.y)
     }
 
     update() {
