@@ -12,8 +12,7 @@ class Platform {
     }
 
     draw() {
-        //ctx.fillStyle = 'red'
-        //ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
         ctx.drawImage(this.image, this.position.x, this.position.y)
     }
 }
+

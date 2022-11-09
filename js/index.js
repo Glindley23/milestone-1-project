@@ -3,7 +3,10 @@ const canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.canvas.width = 1024;
 ctx.canvas.height = 576;
-
+const frameWidth = 128;
+const frameHeight = 128;
+let frameIndex = 0;
+let count = 0;
 
 
 //creating background sprite levels 
@@ -35,6 +38,10 @@ const backgroundLevel3 = new Sprite({
     },
     imageSrc: 'assets/background/city Foreground.png',
 })
+
+//Title
+
+
 
 // Create new player
 const player = new Player();
@@ -108,26 +115,69 @@ new Platform({
     image
 }),
 new Platform({
-    x: 1100,
+    x: 1000,
     y: 550,
     image
 }),
 new Platform({
-    x: 1180,
+    x: 1170,
     y: 350,
     image
 }),
 new Platform({
-    x: 1480,
-    y: 350,
+    x: 1430,
+    y: 320,
     image
 }),
 new Platform({
-    x: 1780,
-    y: 350,
+    x: 1700,
+    y: 370,
+    image
+}),new Platform({
+    x: 1950,
+    y: 290,
+    image
+}),new Platform({
+    x: 2290,
+    y: 550,
+    image
+}),new Platform({
+    x: 2550,
+    y: 400,
+    image
+}),
+new Platform({
+    x: 2500,
+    y: 440,
+    image
+}),
+new Platform({
+    x: 2700,
+    y: 340,
+    image
+}),
+
+new Platform({
+    x: 2950,
+    y: 260,
+    image
+}),
+//ending
+new Platform({
+    x: 2700,
+    y: 140,
     image
 }),
 ]
+
+//create win condition
+let victoryImage = new Image();
+victoryImage.src = '../assets/victory/grail.png'
+
+let winCondition = new Grail({
+    x:2740,
+    y:90
+})
 
 let scrollOffset = 0;
 
@@ -154,21 +204,27 @@ function animate () {
     if (keys.d.pressed) {
         scrollOffset += 5
         platforms.forEach(platform => {
-             platform.position.x -= 6;
+             platform.position.x -= 5;
         }) 
+        winCondition.position.x -= 5;
     } else if (keys.a.pressed) {
         scrollOffset -= 5
         platforms.forEach(platform => {
            platform.position.x += 5;
-        })  
+           
+        }) 
+        winCondition.position.x += 5; 
     }
     //drawing platforms and player
+    
     platforms.forEach(platform => {
         platform.draw();
     })
+    winCondition.draw();
     player.draw();
+    
     player.update();
-
+    
     //rectangle collision detection for player
     platforms.forEach(platform => {
         if (
@@ -183,8 +239,10 @@ function animate () {
         player.velocity.y = 0;
 
         }
-
+    ctx.fillText("Grail Jump", 360, 60);
+    ctx.font = '60px Fantasy'
     })
+    
 }
 
 
