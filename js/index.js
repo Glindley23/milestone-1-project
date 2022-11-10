@@ -3,11 +3,6 @@ const canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.canvas.width = 1024;
 ctx.canvas.height = 576;
-const frameWidth = 128;
-const frameHeight = 128;
-let frameIndex = 0;
-let count = 0;
-
 
 //creating background sprite levels 
 let backgroundLevel1 = new Sprite({
@@ -49,12 +44,8 @@ let keys = {
     }
 }
 
-
 // Create new player
 let player = new Player();
-
-
-
 
 //main platform sprite
 let image = new Image();
