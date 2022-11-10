@@ -34,11 +34,8 @@ class Player {
         this.sides.bottom = this.position.y + this.height
         if (this.sides.bottom < canvas.height) {
             this.velocity.y += this.gravity;
-        } else {
-            this.velocity.y = 0;
-            this.position.y = canvas.height - 70
-        }
-        if (this.position.y + this.height >= canvas.height) {
+        } 
+        if (this.position.y >= canvas.height) {
             this.image.src = '../assets/player/playerdeath.png'
         }
     }
