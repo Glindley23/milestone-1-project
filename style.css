@@ -1,50 +1,85 @@
 body {
     background: black;
-    display: flex;
-    flex: 100%;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    
 }
 
 canvas {
     background-image: url("assets/background/Sky.png");
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 0;
 }
-
 .modal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10; /* Sit on top */
+    padding-top: 10px 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 200ms ease-in-out;
+    width: 900px;
+    max-width: 80%;
+    height: 80%; /* Full height */
+    background-color: rgb(253, 253, 253); 
   }
   
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid black;
   }
   
-  /* The Close Button */
-  .close {
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    /* The Close Button */
+  .modal-header .close-button {
     color: #aaaaaa;
-    float: right;
-    font-size: 28px;
+    float: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2rem;
     font-weight: bold;
   }
+    /* Modal Content */
+  .modal-body {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-  .close:hover,
-  .close:focus {
+  .close-button:hover,
+  .close-button:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  #overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+  }
+
+  #overlay.active {
+    pointer-events: all;
+     
+    background-color: rgba(0,0,0, .5);
   }
