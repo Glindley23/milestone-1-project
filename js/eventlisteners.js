@@ -7,18 +7,18 @@ window.addEventListener('keydown', (event) => {
             if (player.velocity.y === 0) {
                 
                 player.velocity.y = -15
-                player.image.src = "../assets/images/jump.png"
+                player.image.src = "assets/images/jump.PNG"
             }
         break
         //move player to the left
         case 'a':
             keys.a.pressed = true
-            player.image.src = "../assets/images/runleft.png"
+            player.image.src = "assets/images/runleft.PNG"
         break
         //move player to the right
         case 'd':
             keys.d.pressed = true
-            player.image.src = "../assets/images/run.png"
+            player.image.src = "assets/images/run.PNG"
         break
     }
 })
@@ -27,12 +27,12 @@ window.addEventListener('keyup', (event) => {
     switch (event.key) {
         case 'a':
             keys.a.pressed = false;
-            player.image.src = "../assets/images/idleleft.png"
+            player.image.src = "assets/images/idleleft.PNG"
         break
         
         case 'd':
             keys.d.pressed = false;
-            player.image.src = "../assets/images/idle.png"
+            player.image.src = "assets/images/idle.PNG"
         break
     }
 })
