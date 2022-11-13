@@ -10,28 +10,28 @@ let backgroundLevel1 = new Sprite({
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/sky.png',
+    imageSrc: 'assets/images/sky.png',
 })
 let backgroundLevel1cont = new Sprite({
     position: {
     x: 64 * 7,
     y: 0,
     },
-    imageSrc: 'assets/background/sky.png',
+    imageSrc: 'assets/images/sky.png',
 })
 let backgroundLevel2 = new Sprite({
     position: {
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/city.png',
+    imageSrc: 'assets/images/city.png',
 })
 let backgroundLevel3 = new Sprite({
     position: {
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/city Foreground.png',
+    imageSrc: 'assets/images/city Foreground.png',
 })
 
 //keys
@@ -49,7 +49,7 @@ let player = new Player();
 
 //main platform sprite
 let image = new Image();
-image.src = '../assets/platforms/ground0.png';
+image.src = '../assets/images/ground0.png';
 
 // create platforms
 let platforms = [
@@ -161,7 +161,7 @@ new Platform({
 
 //create win condition (width 48px)
 let victoryImage = new Image();
-victoryImage.src = '../assets/victory/grail.png'
+victoryImage.src = '../assets/images/grail.png'
 //x2740
 let winCondition = new Grail({
     x:2740,
@@ -261,28 +261,28 @@ backgroundLevel1 = new Sprite({
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/sky.png',
+    imageSrc: 'assets/images/sky.png',
 })
 backgroundLevel1cont = new Sprite({
     position: {
     x: 64 * 7,
     y: 0,
     },
-    imageSrc: 'assets/background/sky.png',
+    imageSrc: 'assets/images/sky.png',
 })
 backgroundLevel2 = new Sprite({
     position: {
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/city.png',
+    imageSrc: 'assets/images/city.png',
 })
 backgroundLevel3 = new Sprite({
     position: {
     x: 0,
     y: 0,
     },
-    imageSrc: 'assets/background/city Foreground.png',
+    imageSrc: 'assets/images/city Foreground.png',
 })
 
 // Create new player
@@ -290,7 +290,7 @@ player = new Player();
 
 //main platform sprite
 image = new Image();
-image.src = '../assets/platforms/ground0.png';
+image.src = '../assets/images/ground0.png';
 
 // create platforms
 platforms = [
@@ -402,7 +402,7 @@ new Platform({
 
 //create win condition image
 victoryImage = new Image();
-victoryImage.src = '../assets/victory/grail.png'
+victoryImage.src = '../assets/images/grail.png'
 
 winCondition = new Grail({
     x:2740,

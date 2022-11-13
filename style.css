@@ -4,7 +4,7 @@ body {
 }
 
 canvas {
-    background-image: url("assets/background/Sky.png");
+    background-image: url("assets/images/Sky.png");
     position: absolute;
     left: 70px;
     align-items: center;
