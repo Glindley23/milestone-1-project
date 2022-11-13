@@ -29,13 +29,45 @@
         <ul>
             <li>Use A and D to move left and right</li>
             <li>Jump by clicking W</li>
-            <li>Touch the grail to win the round!</li>
+            <li>Touch the grail to win the game!</li>
         </ul>
     </div>
     </div>
 
 </div>
-  
+
+<!-- Restart Modal -->
+<button id="restart-btn" class="button">Restart</button>
+
+<div class="modal" id="deathModal">
+    
+    <!-- Modal content -->
+    <div class="modal-header">
+        <div class="title">YOU PERISHED!</div>
+    </div>
+    
+    <div class = "modal-body">
+    <p>The grail remains out of reach.. Start your journey again if your will is unbroken.</p>
+    
+    </div>
+
+</div>
+
+<!-- Victory Modal -->
+<button id="restart-btn" class="button">Restart</button>
+
+<div class="modal" id="winModal">
+    
+    <!-- Modal content -->
+    <div class="modal-header">
+        <div class="title">VICTORY IS YOURS!</div>
+    </div>
+    
+    <div class = "modal-body">
+    </div>
+
+</div>
+
   <div class="overlay" id="overlay"></div>
 
 <script src="js/eventlisteners.js"></script> 

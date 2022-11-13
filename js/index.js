@@ -159,10 +159,10 @@ new Platform({
 }),
 ]
 
-//create win condition
+//create win condition (width 48px)
 let victoryImage = new Image();
 victoryImage.src = '../assets/victory/grail.png'
-
+//x2740
 let winCondition = new Grail({
     x:2740,
     y:90
@@ -229,16 +229,26 @@ function animate () {
         player.velocity.y = 0;
 
         }
-    ctx.fillText("Grail Jump", 360, 60);
+    
+    ctx.fillText("Grail Jump", 390, 60);
     ctx.font = '60px Fantasy'
     })
     
     //win condition
-
+    if ( player.position.x + player.width >= winCondition.position.x && 
+        winCondition.position.x + winCondition.width >= player.position.x &&
+        player.position.y <= winCondition.position.y + winCondition.height
+        ) {
+            
+            winModal.style.display = 'block';
+            restart();
+            
+        }
     //lose condition
     if ( player.position.y > canvas.height ) {
-        console.log('You lose');
-        init();
+        deathModal.style.display = 'block';
+        restart();
+        
     }
 }
 
