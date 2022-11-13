@@ -5,38 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <canvas id="canvas"></canvas>
+    <canvas id="canvas"></canvas>
     <title>Grail Jump</title>
     <link rel="stylesheet" href="style.css">
-    <script src="js/eventlisteners.js"></script>
-     <script src="js/classes/Background.js"></script>
-    <script src="js/classes/Player.js"></script>
-    <script src="js/Classes/Platform.js"></script>
-    <script src="js/classes/grail.js"></script>
-    <script src="js/index.js"></script>
-    </head>
+    
+    
+   
+</head>
 <body>
     
-    <!-- Trigger/Open The Modal -->
-<button data-modal-target="#modal" id="myBtn">Start Game</button>
-
-    <!-- The Modal -->
-<div  class="modal" id="modal">
-
+    <!-- Beginning Modal -->
+<button class="button" id="start-btn">Start Game</button>
+   
+<div class="modal" id="myModal">
     <!-- Modal content -->
     <div class="modal-header">
         <div class="title">GRAIL JUMP</div>
-        <button data-close-button class="close-button">&times;</button>
     </div>
     
     <div class = "modal-body">
-    GGGGG
+    <p>Traverse whats left of the city to find the golden grail of legends. The landscape is treacherous. Have your wits about you.</p>
+    <div class = "controls">Controls:
+        <ul>
+            <li>Use A and D to move left and right</li>
+            <li>Jump by clicking W</li>
+            <li>Touch the grail to win the round!</li>
+        </ul>
+    </div>
     </div>
 
-  </div>
+</div>
   
-  <div id="overlay"></div>
+  <div class="overlay" id="overlay"></div>
 
-
+<script src="js/eventlisteners.js"></script> 
+<script src="js/classes/Background.js"></script>
+<script src="js/classes/Player.js"></script>
+<script src="js/Classes/Platform.js"></script>
+<script src="js/classes/grail.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

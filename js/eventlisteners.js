@@ -37,3 +37,15 @@ window.addEventListener('keyup', (event) => {
     }
 })
 
+    let myModal = document.getElementById("myModal");
+    let myOverlay = document.getElementById('overlay');
+    let startButton = document.getElementById("start-btn");
+    
+    
+    startButton.onclick = function () {
+        startButton.style.display = 'none';
+        myModal.style.display = 'none';
+        myOverlay.style.display = 'none';
+        init();
+    }
+        

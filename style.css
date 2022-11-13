@@ -5,12 +5,15 @@ body {
 
 canvas {
     background-image: url("assets/background/Sky.png");
+    position: absolute;
+    left: 70px;
     align-items: center;
     justify-content: center;
     height: 100vh;
     z-index: 0;
 }
-.modal {
+#myModal {
+    display: block;
     position: fixed; /* Stay in place */
     z-index: 10; /* Sit on top */
     padding-top: 10px 15px;
@@ -18,17 +21,14 @@ canvas {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: 200ms ease-in-out;
+    overflow: auto;
     width: 900px;
     max-width: 80%;
     height: 80%; /* Full height */
-    background-color: rgb(253, 253, 253); 
+    background-color: rgb(14, 102, 105); 
   }
   
-  .modal.active {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .modal-header {
+ .modal-header {
     padding: 10px 15px;
     border-bottom: 1px solid black;
   }
@@ -41,7 +41,7 @@ canvas {
     align-items: center;
   }
     /* The Close Button */
-  .modal-header .close-button {
+  .modal-header #close-btn {
     color: #aaaaaa;
     float: none;
     cursor: pointer;
@@ -51,35 +51,41 @@ canvas {
     font-size: 2rem;
     font-weight: bold;
   }
+  #start-btn {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    font-size:20px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    bottom: 150px;
+    z-index: 9999;
+  }
     /* Modal Content */
   .modal-body {
     padding: 10px 15px;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
   }
   
-  .close-button:hover,
-  .close-button:focus {
-    color: #000;
+
+  #start-btn:hover,
+  #start-btn:focus {
+    background-color: rgb(0, 170, 37);
     text-decoration: none;
     cursor: pointer;
   }
-
   #overlay {
-
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     opacity: 1;
-    pointer-events: none;
-    transition: 200ms ease-in-out;
-  }
-
-  #overlay.active {
-    pointer-events: all;
-     
+    transition: 200ms ease-in-out; 
+    transform: translate(-50%, -50%) scale(3);
     background-color: rgba(0,0,0, .5);
   }
