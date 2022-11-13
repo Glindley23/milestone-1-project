@@ -2,7 +2,7 @@ class Player {
     constructor() {
         
         this.image = new Image()
-        this.image.src = 'assets/images/idle.PNG'
+        this.image.src = './assets/images/idle.PNG'
         this.position = {
             x: 110,
             y: 480
@@ -36,7 +36,7 @@ class Player {
             this.velocity.y += this.gravity;
         } 
         if (this.position.y >= canvas.height) {
-            this.image.src = 'assets/images/playerdeath.PNG'
+            this.image.src = './assets/images/playerdeath.PNG'
         }
     }
 
